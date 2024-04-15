@@ -1,2 +1,12 @@
- Run the command in this twice
+# Project Title
+
+This project contains the LaTeX source code for a book.
+
+## Compilation
+
+To compile the book into a PDF, you need to have `pdflatex`, `bibtex`, and `makeindex` installed on your system. Once installed, you can compile the book using the following command:
+
+```bash
 pdflatex book.tex && bibtex book.aux && makeindex book.idx && pdflatex book.tex && pdflatex book.tex
+
+```
