@@ -1,0 +1,61 @@
+% customstyle.sty
+
+% Load required packages
+\RequirePackage{fancyhdr} % For fancy headers and footers
+\RequirePackage{titlesec} % For formatting section titles
+\RequirePackage{titletoc} % For customizing table of contents
+\RequirePackage{lineno}   % For line numbers
+\RequirePackage{natbib}   % Include the natbib package for bibliography
+\RequirePackage{lipsum}   % Include the lipsum package for generating dummy text
+
+% Additional packages for word breaks and spacing
+\RequirePackage{microtype} % For improved typography and word breaks
+\RequirePackage{setspace}  % For double spacing
+
+% Set double spacing
+\onehalfspacing % Use one and a half spacing
+%\doublespacing % Alternatively, you can use double spacing
+
+% Define fancy headers and footers
+\fancyhf{} % Clear default header and footer settings
+\fancyhead[LE,RO]{\thepage} % Page number in header
+\fancyhead[RE]{\leftmark}   % Chapter title in even pages
+\fancyhead[LO]{\rightmark}  % Chapter title in odd pages
+\renewcommand{\headrulewidth}{0.4pt} % Header rule width
+\renewcommand{\footrulewidth}{0pt}   % No footer rule
+\pagestyle{fancy} % Apply fancy page style
+
+% Define formatting for section titles
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{50pt}{40pt}
+\titleformat{\section}
+{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+% Customize table of contents
+\titlecontents{chapter}[0pt]
+{\bfseries\addvspace{10pt}}
+{\MakeUppercase{\chaptername} \thecontentslabel\quad}
+{}
+{\hfill\contentspage}
+\titlecontents{section}[1em]
+{\addvspace{5pt}}
+{\thecontentslabel\quad}
+{}
+{\titlerule*[0.5pc]{.}\contentspage}
+
+% Enable line numbers
+\linenumbers
+
+% Set penalties for minimizing hyphenation
+\pretolerance=1000 % Allow more hyphenation
+\tolerance=2000 % Allow even more spacing between words
+\hyphenpenalty=500 % Discourage hyphenation
+\exhyphenpenalty=500 % Discourage hyphenation at explicit hyphens
+\brokenpenalty=100 % Discourage page breaks after hyphens
+
+% Specify the bibliography style
+\bibliographystyle{plainnat}
+
+% End of style sheet

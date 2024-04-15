@@ -1,0 +1,2 @@
+ Run the command in this twice
+pdflatex book.tex && bibtex book.aux && makeindex book.idx && pdflatex book.tex && pdflatex book.tex
